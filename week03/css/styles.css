@@ -28,13 +28,11 @@ p.text-center {
     background-color: #ff6666; 
 }
 
-/*
 .section:hover {
     cursor:n-resize;
     overflow-x:hidden;
     overflow-y: scroll;
 }
-*/
 
 /* chicken, beef and sushi */
 div.section-title {
