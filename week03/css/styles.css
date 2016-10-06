@@ -1,0 +1,129 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: #61122f;
+  font-family: 'Oxygen', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+/*our menu */
+p.text-center {
+    font-size: 1.5em;
+}
+
+.section {
+    position: relative;
+    margin: 15px 15px 15px 15px;
+    padding: 10px 10px 10px 10px;
+    height: 1000px;
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: #ff6666; 
+}
+
+.section:hover {
+    cursor:n-resize;
+    overflow-x:hidden;
+    overflow-y: scroll;
+}
+
+/* chicken, beef and sushi */
+div.section-title {
+    margin:15px;
+    padding: 5px;
+    font-size: 125%;
+    text-align: center;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+}
+
+.navbar-brand h1 { /* Restaurant name */
+  font-family: 'Lora', serif;
+  color: #557c3e;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+
+#nav-list a {
+  color: #951C49;
+    background: #12EE12;
+  text-align: center;
+}
+
+#nav-list a:hover {
+  background: #E7E7E7;
+}
+
+@media (min-width:1200px) {
+    #nav-list {
+        opacity: 0;
+    }
+}
+
+@media (min-width:992px) and (max-width: 1199px) {
+    #nav-list {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width:991px) {
+    #nav-list {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Header */
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 10px;
+    font-size: 5vw; /* 1vw = 1% of viewport width */
+  }
+  .navbar-brand p { /* Kosher cert */
+    font-size: .6em;
+    margin-top: 12px;
+  }
+  .navbar-brand p img { /* Star-K */
+    height: 20px;
+  }
+
+  #collapsable-nav a { /* Collapsed nav menu text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span { /* Collapsed nav menu glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+}
