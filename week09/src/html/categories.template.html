@@ -1,0 +1,15 @@
+<a ui-sref="home">Home</a> &lt; <span>Categories</span>
+
+<h3>Our restaurant's categories</h3>
+<!-- <category-list items="categoryList.allCategories.data"></category-list>
+
+<ui-view></ui-view> -->
+
+
+<ul>
+    <li ng-repeat="category in $ctrl.allCategories().data">
+      <!-- (<a href="" ng-click="(category.short_name);">
+        {{ shortName: category.short_name }}</a>) -->
+      {{ category.name }}
+    </li>
+</ul>
