@@ -1,1 +1,92 @@
+<h1 class='text-center container'>Newsletter Sign up</h1>
 
+<div class='text-center signup'>
+  <form name='regForm' novalidate>
+
+    <div>
+      First Name:
+      <div class='user'>
+        <input type="text" name="firstName" placeholder="first name"
+          ng-model="user.firstname"
+          required>
+      </div>
+        <span
+          ng-if="regForm.firstname.$error.required && (regForm.firstname.$touched || regForm.$submitted)">
+          First name is required.
+        </span>
+    </div>
+      <br>
+    <div>
+      Last Name:
+      <div class='user'>
+        <input type="text" name="lastName" placeholder="last name"
+          ng-model="user.lastname"
+          required>
+        </div>
+        <span
+          ng-if="regForm.lastname.$error.required && (regForm.lastname.$touched || regForm.$submitted)">
+          First name is required.
+        </span>
+    </div>
+    <br>
+    <div>
+      Email:
+      <div class='user'>
+        <input type="email" name="email" placeholder="email"
+          ng-model="user.email"
+          required>
+        </div>
+        <span ng-if="regForm.email.$invalid && (regForm.email.$touched || regForm.$submitted)">
+          Must be a valid email address: handle@domain format
+        </span>
+        <span ng-if="regForm.email.$error.required && (regForm.email.$touched || regForm.$submitted)">
+          Email is required.
+        </span>
+      </div>
+      <br>
+    <div>
+      Phone Number:
+      <div class='user'>
+        <input type="text" name="phone" placeholder="###-###-####"
+          ng-model="user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+      </div>
+      <span ng-if="regForm.phone.$invalid && (regForm.phone.$touched || regForm.$submitted)">
+        Phone must be in the format ###-###-####.
+      </span>
+    </div>
+      <br>
+    <div>
+      Favorite Dish:
+      <div class='user'>
+        <select ng-model="user.favoriteDish" name="favoriteDish">
+          <option ng-repeat="category in signupCtrl.menuCategories" value="{{category.short_name}}">
+            ({{category.short_name}}){{category.name}}
+          </option>
+        </select>
+      </div>
+      <span ng-if="regForm.favoriteDish.$error.required && (regForm.favoriteDish.$touched || regForm.$submitted)">
+        Favorite dish is required.
+      </span>
+    </div>
+    <br>
+
+    <div class="user">
+      <button
+        ng-disabled="regForm.$invalid"
+        ng-click="signupCtrl.submit()">Submit</button>
+
+      <span ng-if="regForm.$invalid && regForm.$submitted">
+        Favorite dish is required.
+      </span>
+    </div>
+  </form>
+
+  <div ng-if="signupCtrl.completed">
+    Username: {{ user.firstname}} {{user.lastname}} <br>
+    Email: {{ user.email}} <br>
+    Phone: {{ user.phone }} </br>
+    Favorite: {{ user.favoriteDish}}
+  </div>
+
+</div>
