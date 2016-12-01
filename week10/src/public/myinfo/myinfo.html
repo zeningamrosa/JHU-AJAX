@@ -1,1 +1,18 @@
+<h1 class='text-center container'>Personal Info</h1>
+<div ng-if='myinfoCtrl.enable'>
+  <div class='text-center signup'>
+    <h3>First Name : {{show.firstname}}</h3>
 
+    <h3>Last Name: {{show.lastname}}</h3>
+
+    <h3>Email: {{show.email}}</h3>
+
+    <h3>Phone: {{show.phone}}</h3>
+
+    <h3>Favorite Dish : {{show.favoriteDish}}</h3>
+  </div>
+</div>
+
+<div class='text-center' ng-if ='!myinfoCtrl.enable'}>
+  <h2> Not sign up yet. <a href="/public/signup/signup.html">Sign up now!</a></h2>
+</div>
